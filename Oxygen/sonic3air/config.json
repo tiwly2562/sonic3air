@@ -16,7 +16,7 @@
 	"PlatformFlags": "-1",
 
 	// Game
-	"StartPhase": "2",				// 0: Disclaimer, 1: Title Screen, 2: Main Menu, 3: In-game (loading a save state)
+	"StartPhase": "1",				// 0: Disclaimer, 1: Title Screen, 2: Main Menu, 3: In-game (loading a save state)
 
 	// Video
 	"WindowSize": "1600 x 960",
@@ -34,7 +34,7 @@
 		//"LoadLevel": "0x0601",		// Load level (requires "StartPhase": "3")
 		//"UseCharacters": "2",			// Use character for level loading: 0: Sonic & Tails, 1: Sonic, 2: Tails, 3: Knuckles, 4: Knuckles & Tails
 
-		"EnableROMDataAnalyser": "0"	// Enables the "ROMDataAnalyser" script functions (which can have a certain performance impact)
+		"EnableROMDataAnalyser": "1"	// Enables the "ROMDataAnalyser" script functions (which can have a certain performance impact)
 	},
 
 	// Game recorder
