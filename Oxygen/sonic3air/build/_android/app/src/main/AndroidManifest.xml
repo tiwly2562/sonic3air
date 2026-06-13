@@ -73,7 +73,7 @@
          -->
 
         <activity
-            android:name="org.eukaryot.sonic3air.test.GameActivity"
+            android:name="GameActivity"
             android:label="@string/app_name"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleInstance"
