@@ -31,9 +31,9 @@
 	// Data packages
 	"DataPackages":
 	{
-		"enginedata.bin":    { "Required": false },
-		"gamedata.bin":      { "Required": false },
-		"audiodata.bin":     { "Required": false },
+		"enginedata.bin":    { "Required": true },
+		"gamedata.bin":      { "Required": true },
+		"audiodata.bin":     { "Required": true },
 		"audioremaster.bin": { "Required": false }
 	},
 
