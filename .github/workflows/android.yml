@@ -11,28 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. ดึงโค้ดลงมาในเครื่อง Cloud
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    # 2. ติดตั้ง Java (JDK 17)
-    - name: set up JDK 17
+    - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
 
-    # 3. ให้สิทธิ์การรันไฟล์ gradlew (ระบุพาธลึกลงไปตามโครงสร้างโปรเจกต์)
+    # ✅ เพิ่ม step นี้ — copy assets ที่จำเป็นก่อน build
+    - name: Copy assets to Android project
+      run: |
+        mkdir -p Oxygen/sonic3air/build/_android/app/src/main/assets
+        cp -r Oxygen/sonic3air/data   Oxygen/sonic3air/build/_android/app/src/main/assets/
+        cp -r Oxygen/sonic3air/scripts Oxygen/sonic3air/build/_android/app/src/main/assets/
+        cp    Oxygen/sonic3air/config.json Oxygen/sonic3air/build/_android/app/src/main/assets/
+
     - name: Grant execute permission for gradlew
       run: chmod +x Oxygen/sonic3air/build/_android/gradlew
 
-    # 4. สั่งบิลด์แอป Android โดยสั่งรันจากโฟลเดอร์ _android
     - name: Build with Gradle
       run: ./gradlew assembleDebug
       working-directory: Oxygen/sonic3air/build/_android
 
-    # 5. กวาดหาไฟล์ APK ทุกตัวที่บิลด์เสร็จจากทุกโฟลเดอร์ย่อยมาให้อัตโนมัติ
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
