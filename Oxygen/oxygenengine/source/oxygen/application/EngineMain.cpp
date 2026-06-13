@@ -286,7 +286,7 @@ bool EngineMain::startupEngine()
 	if (!FTX::System->initialize())
 	{
 		RMX_ERROR("System initialization failed", );
-		return false;
+		return true;
 	}
 
 	// Video
