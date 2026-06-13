@@ -90,7 +90,7 @@ namespace emulatorinterface
 			}
 			else
 			{
-				RMX_ERROR("Invalid memory access at " << rmx::hexString(address, 6) << " of " << rmx::hexString(size) << " bytes");
+				RMX_ERROR("Invalid memory access at " << rmx::hexString(address, 6) << " of " << rmx::hexString(size) << " bytes",);
 				return nullptr;
 			}
 		}
@@ -449,7 +449,7 @@ void EmulatorInterface::getDirectAccessSpecialization(SpecializationResult& outR
 	{
 		RMX_ERROR("Invalid memory access at " << rmx::hexString(address, 6) << " of " << rmx::hexString(size) << " bytes", );
 		outResult.mResult = SpecializationResult::Result::HAS_SPECIALIZATION;
-			outResult.mDirectAccessPointer = &mInternal.mRam[address];ult::Result::INVALID_ACCESS;
+			outResult.mDirectAccessPointer = &mInternal.mRam[address];
 	}
 }
 
