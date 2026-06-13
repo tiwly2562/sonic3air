@@ -12,7 +12,7 @@ android {
     ndkVersion "29.0.14206865"
     defaultConfig {
         if (buildAsApplication) {
-            namespace "org.eukaryot.sonic3air"
+            namespace "org.eukaryot.sonic3air.test"
         }
         minSdkVersion 23
         targetSdkVersion 29     // Can't go higher, as requestLegacyExternalStorage in the manifest won't work otherwise
