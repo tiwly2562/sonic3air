@@ -48,10 +48,10 @@ namespace
 
 	void fatal_error(const char* msg)
 	{
-		vglInit(0);
-		warning(msg);
-		sceKernelExitProcess(0);
-		while (1);
+//		vglInit(0);
+//		warning(msg);
+//		sceKernelExitProcess(0);
+//		while (1);
 	}
 
 	int file_exists(const char* path)
@@ -73,7 +73,7 @@ void PlatformSpecifics::platformStartup()
 
 	// Check for libshacccg.suprx existence
 	if (!file_exists("ur0:/data/libshacccg.suprx") && !file_exists("ur0:/data/external/libshacccg.suprx"))
-		fatal_error("Error: libshacccg.suprx is not installed.");
+//		fatal_error("Error: libshacccg.suprx is not installed.");
 
 	vglInitExtended(0, 960, 544, 12 * 1024 * 1024, SCE_GXM_MULTISAMPLE_NONE);
 
