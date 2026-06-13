@@ -1,4 +1,4 @@
-package org.eukaryot.sonic3air;
+package org.eukaryot.sonic3air.test;
 
 import android.app.DownloadManager;
 import android.content.ContentResolver;
