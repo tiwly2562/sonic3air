@@ -85,7 +85,7 @@ namespace
 			PlatformFunctions::showMessageBox("More bad news...", "Crash dump file could not be written...");
 		}
 
-		return success ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH;
+		return success ? EXCEPTION_CONTINUE_EXECUTION
 	}
 
 	void InitMiniDumpWriter()
